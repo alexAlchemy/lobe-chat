@@ -25,6 +25,21 @@ export const opeanaiSTTOptions: SelectProps['options'] = [
   },
 ];
 
+export const elevenLabsTTSOptions: SelectProps['options'] = [
+  {
+    label: <LabelRenderer label={'eleven_multilingual_v2'} />,
+    value: 'eleven_multilingual_v2',
+  },
+  {
+    label: <LabelRenderer label={'eleven_monolingual_v1'} />,
+    value: 'eleven_monolingual_v1',
+  },
+  {
+    label: <LabelRenderer label={'eleven_turbo_v2'} />,
+    value: 'eleven_turbo_v2',
+  },
+];
+
 export const sttOptions: SelectProps['options'] = [
   {
     label: 'OpenAI',

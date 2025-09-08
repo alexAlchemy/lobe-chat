@@ -10,6 +10,8 @@ export const LOBE_CHAT_ACCESS_CODE = 'X-lobe-chat-access-code';
 
 export const OAUTH_AUTHORIZED = 'X-oauth-authorized';
 
+export const ELEVENLABS_API_KEY_HEADER_KEY = 'X-elevenlabs-api-key';
+
 /**
  * @deprecated
  */
