@@ -384,6 +384,11 @@
     "title": "系统设置"
   },
   "settingTTS": {
+    "elevenlabs": {
+      "apiKey": "ElevenLabs API 密钥",
+      "model": "ElevenLabs 语音合成模型",
+      "title": "ElevenLabs"
+    },
     "openai": {
       "sttModel": "OpenAI 语音识别模型",
       "title": "OpenAI",

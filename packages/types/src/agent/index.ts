@@ -4,7 +4,7 @@ import { KnowledgeBaseItem } from '../knowledgeBase';
 import { FewShots } from '../llm';
 import { LobeAgentChatConfig } from './chatConfig';
 
-export type TTSServer = 'openai' | 'edge' | 'microsoft';
+export type TTSServer = 'openai' | 'edge' | 'microsoft' | 'elevenlabs';
 
 export interface LobeAgentTTSConfig {
   showAllLocaleVoice?: boolean;
@@ -12,6 +12,7 @@ export interface LobeAgentTTSConfig {
   ttsService: TTSServer;
   voice: {
     edge?: string;
+    elevenlabs?: string;
     microsoft?: string;
     openai: string;
   };

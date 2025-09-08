@@ -29,4 +29,5 @@ export const API_ENDPOINTS = {
   tts: '/webapi/tts/openai',
   edge: '/webapi/tts/edge',
   microsoft: '/webapi/tts/microsoft',
+  elevenlabs: '/webapi/tts/elevenlabs',
 };

@@ -1,4 +1,5 @@
 import {
+  ELEVENLABS_API_KEY_HEADER_KEY,
   LOBE_CHAT_ACCESS_CODE,
   LOBE_USER_ID,
   OPENAI_API_KEY_HEADER_KEY,
@@ -34,5 +35,27 @@ export const createHeaderWithOpenAI = (header?: HeadersInit): HeadersInit => {
     [LOBE_USER_ID]: state.user?.id || '',
     [OPENAI_API_KEY_HEADER_KEY]: keyVaults.apiKey || '',
     [OPENAI_END_POINT]: keyVaults.baseURL || '',
+  };
+};
+
+export const createHeaderWithElevenLabs = (header?: HeadersInit): HeadersInit => {
+  const state = useUserStore.getState();
+
+  let keyVaults: Record<string, any> = {};
+
+  // TODO: remove this condition in V2.0
+  if (isDeprecatedEdition) {
+    keyVaults = keyVaultsConfigSelectors.getVaultByProvider('elevenlabs' as any)(
+      useUserStore.getState(),
+    );
+  } else {
+    keyVaults = aiProviderSelectors.providerKeyVaults('elevenlabs')(useAiInfraStore.getState()) || {};
+  }
+
+  return {
+    ...header,
+    [LOBE_CHAT_ACCESS_CODE]: keyVaultsConfigSelectors.password(state),
+    [LOBE_USER_ID]: state.user?.id || '',
+    [ELEVENLABS_API_KEY_HEADER_KEY]: keyVaults.apiKey || state.settings.tts?.elevenlabs?.apiKey || '',
   };
 };
