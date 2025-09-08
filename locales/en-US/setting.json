@@ -384,6 +384,11 @@
     "title": "System Settings"
   },
   "settingTTS": {
+    "elevenlabs": {
+      "apiKey": "ElevenLabs API Key",
+      "model": "ElevenLabs TTS Model",
+      "title": "ElevenLabs"
+    },
     "openai": {
       "sttModel": "OpenAI Speech-to-Text Model",
       "title": "OpenAI",
